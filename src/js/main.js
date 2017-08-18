@@ -1,6 +1,2 @@
-/*
- * Custom
- */
-
 //= partials/app.js
 

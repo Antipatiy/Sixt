@@ -10,9 +10,11 @@ import cleanCSS from 'gulp-clean-css';
 import pngquant from 'imagemin-pngquant';
 import rimraf from 'rimraf';
 import browserSync from 'browser-sync';
-const reload = browserSync.reload;
 import imagemin from 'gulp-imagemin';
 import babel from 'gulp-babel';
+import sourcemaps from 'gulp-sourcemaps';
+
+const reload = browserSync.reload;
 
 let path = {
     build: {
@@ -56,19 +58,23 @@ gulp.task('html:build', () => {
 gulp.task('js:build', () => {
     gulp.src(path.src.js)
         .pipe(rigger())
+        .pipe(sourcemaps.init())
         .pipe(babel({
           presets: ['env']
         }))
         .pipe(uglify())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.js))
         .pipe(reload({stream: true}));
 });
 
 gulp.task('style:build', () => {
     gulp.src(path.src.style)
+        .pipe(sourcemaps.init())
         .pipe(sass())
         .pipe(prefixer())
         .pipe(cleanCSS())
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });
