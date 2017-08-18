@@ -1,0 +1,174 @@
+@media all and (max-width: 1000px) {
+  body {
+    header {
+      .header-container {
+        min-width: 350px;
+        width: 100%;
+        position: relative;
+
+        .sixt-icon {
+          width: 100px;
+          height: 80px;
+          background-size: 220%;
+        }
+
+        .sixt-icon_small {
+          display: block;
+          position: absolute;
+          top: 30px;
+          left: 35px;
+          width: 100px;
+          height: 80px;
+          float: left;
+          background: url('../img/sixt_logo.svg') no-repeat -44px 10px;
+        }
+
+        .nav-bar {
+          width: 245px;
+          padding: 30px 0 0 20px;
+
+          li {
+            &:first-child {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .slider-container {
+      overflow: hidden;
+
+      .slider {
+        height: 400px;
+        width: 157%;
+        left: -29%;
+
+        .slide {
+
+          .slide__img {
+            height: auto;
+            width: 250%;
+          }
+        }
+      }
+    }
+
+    .slider-arrow {
+      display: none;
+    }
+
+    .form-container {
+      width: 100%;
+      -webkit-flex-flow: row wrap;
+      flex-flow: column wrap;
+      margin: -15% auto 0 auto;
+
+      .item {
+        margin-right: 0;
+
+        &:last-child {
+          margin-top: 0;
+        }
+
+        &:last-child {
+          .for-button {
+            display: block;
+          }
+        }
+
+        label {
+          height: 60px;
+          padding-top: 25px;
+        }
+      }
+
+      .item_1,
+      .item_2,
+      .item_3 {
+        width: 100%;
+      }
+
+      .item_1 {
+
+        .item_1-info {
+          padding-top: 20px;
+        }
+
+        .location-icon {
+          top: 73px;
+        }
+      }
+
+      .item_2 {
+
+        .calendar-icon {
+          top: 76px;
+        }
+
+        div {
+          width: 49%;
+          float: left;
+
+          &:first-child {
+            margin-right: 0;
+          }
+
+          &:last-child {
+            width: 49%;
+            float: right;
+
+            .calendar-icon {
+              top: 76px;
+            }
+          }
+        }
+      }
+
+      .item_3 {
+
+        .button-arrow {
+          background: none;
+        }
+
+        label {
+          height: 0;
+        }
+
+        button {
+          span {
+            display: block;
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 800px) {
+  body {
+    .slider-container {
+      .slider {
+        height: 350px;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  body {
+    .slider-container {
+      .slider {
+        height: 250px;
+      }
+    }
+  }
+
+  .form-container {
+    margin: -20% auto 0 auto;
+  }
+}
